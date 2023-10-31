@@ -130,9 +130,7 @@ data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModal
 <div class="modal-dialog modal-dialog-centered modal-sm">
 <div class="modal-content">
 <div class="modal-header bg-danger text-white">
-<h1 class="modal-title fs-5"
-
-id="exampleModalLabel">Hapus Data Siswa</h1>
+<h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Data Siswa</h1>
 
 <button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>
 </div>
@@ -212,7 +210,7 @@ id="exampleModalLabel">Hapus Data Siswa</h1>
   <div class="mb-3">
   <label class="form-label">Foto Siswa:</label>
   <img id="preview-foto" alt="preview foto" style="max-height: 200px;">
-  <input class="form-control" type="file" name="foto" id="imageUbah">
+  <br> <input class="form-control" type="file" name="foto" id="imageUbah">
   </div>
   </div>
   <div class="modal-footer">
@@ -229,8 +227,9 @@ id="exampleModalLabel">Hapus Data Siswa</h1>
   </div>
   @endforeach
 
-  <script src="{{asset('js/query-3.5.1.min.js')}}"></script>
-  
+  {{-- <script src="{{asset('js/query-3.5.1.min.js')}}"></script> --}}
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
   <script type="text/javascript">
    
    $(document).ready(function(e) {
@@ -248,10 +247,10 @@ id="exampleModalLabel">Hapus Data Siswa</h1>
     $(document).ready(function(er) {
       $('#imageUbah').change(function() {
         let reader2 = new FileReader();
-        reader.onload = (er) => {
+        reader2.onload = (er) => {
            $('#preview-foto').attr('src',er.target.result);
         }
-         reader.readAsDataURL(this.files[0]);
+         reader2.readAsDataURL(this.files[0]);
       });
     });
   </script>

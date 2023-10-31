@@ -154,7 +154,7 @@ class SiswaController extends Controller
                 //proses upload gambar baru
                 $image = $request->file('foto');
             
-                $image->move(public_path('foto'),$image->getClientOriginalName());
+                $image->move(public_path('storage/foto'),$image->getClientOriginalName());
             
                 $upd ->update([
                     'nis' => $request->nis,
